@@ -1,20 +1,21 @@
 # Maintainer: Yurii Kolesnykov <root@yurikoles.com>
 # Contributor: Solomon Choina <shlomochoina@gmail.com>
+#
+# Pull Requests are welcome: https://github.com/yurikoles-aur/kcm-grub2-git
 
 pkgname=kcm-grub2-git
 _product="${pkgname%-git}"
-pkgver=0.6.4.r207.g35ce423
+pkgver=0.6.4.r269.g6262f8d
 pkgrel=1
 pkgdesc="A KDE Control Module for configuring the GRUB2 bootloader"
 arch=('x86_64')
 url='https://invent.kde.org/system/kcm-grub2'
-license=('GPL3')
+license=('GPL-3.0-or-later')
 depends=(
     'grub'
     'hwinfo'
     'kcmutils5'
     'libmagick'
-    'packagekit-qt5'
 )
 makedepends=(
     'cmake'
