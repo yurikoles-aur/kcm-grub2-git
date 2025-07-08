@@ -7,7 +7,7 @@
 pkgname=kcm-grub2-git
 _product="${pkgname%-git}"
 pkgver=0.6.4.r280.gef91a2a
-_branch='work/nico/qt6'
+_branch='master'
 pkgrel=1
 pkgdesc="A KDE Control Module for configuring the GRUB2 bootloader"
 arch=('x86_64')
