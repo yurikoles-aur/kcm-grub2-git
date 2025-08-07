@@ -7,7 +7,6 @@
 pkgname=kcm-grub2-git
 _product="${pkgname%-git}"
 pkgver=0.6.4.r280.gef91a2a
-_branch='work/nico/qt6'
 pkgrel=1
 pkgdesc="A KDE Control Module for configuring the GRUB2 bootloader"
 arch=('x86_64')
@@ -31,7 +30,7 @@ optdepends=(
 	'os-prober: To detect other OSes when generating grub.cfg in BIOS systems'
 	'packagekit-qt6'
 )
-source=("${_product}::git+${url}.git#branch=${_branch}")
+source=("${_product}::git+${url}.git")
 sha256sums=('SKIP')
 
 pkgver() {
