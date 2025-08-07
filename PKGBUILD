@@ -5,8 +5,7 @@
 #
 
 pkgname=kcm-grub2-git
-_product="${pkgname%-git}"
-pkgver=0.6.4.r280.gef91a2a
+pkgver=0.6.4.r301.g1281187
 pkgrel=1
 pkgdesc="A KDE Control Module for configuring the GRUB2 bootloader"
 arch=('x86_64')
@@ -19,7 +18,7 @@ depends=(
 	'libmagick'
 )
 makedepends=(
-    'cmake'
+	'cmake'
 	'extra-cmake-modules'
 	'git'
 	'packagekit-qt6'
@@ -30,21 +29,26 @@ optdepends=(
 	'os-prober: To detect other OSes when generating grub.cfg in BIOS systems'
 	'packagekit-qt6'
 )
-source=("${_product}::git+${url}.git")
+source=("${pkgname}::git+${url}.git")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "${_product}"
 	# cutting off 'v' prefix that presents in the git tag
-	git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+	git -C "${pkgname}" describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
-	cmake -B build -S "${_product}" \
-		-D BUILD_TESTING=OFF \
+	cmake \
+		-B build \
+		-S "${pkgname}" \
 		-Wno-dev
 	cmake --build build
 }
+
+# No tests were found!!!
+# check() {
+# 	ctest --test-dir build
+# }
 
 package() {
 	DESTDIR="${pkgdir}" cmake --install build

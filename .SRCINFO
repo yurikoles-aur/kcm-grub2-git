@@ -1,6 +1,6 @@
 pkgbase = kcm-grub2-git
 	pkgdesc = A KDE Control Module for configuring the GRUB2 bootloader
-	pkgver = 0.6.4.r280.gef91a2a
+	pkgver = 0.6.4.r301.g1281187
 	pkgrel = 1
 	url = https://invent.kde.org/system/kcm-grub2
 	arch = x86_64
@@ -17,7 +17,7 @@ pkgbase = kcm-grub2-git
 	optdepends = packagekit-qt6
 	provides = grub2-editor-frameworks
 	conflicts = grub2-editor-frameworks
-	source = kcm-grub2::git+https://invent.kde.org/system/kcm-grub2.git#branch=work/nico/qt6
+	source = kcm-grub2-git::git+https://invent.kde.org/system/kcm-grub2.git
 	sha256sums = SKIP
 
 pkgname = kcm-grub2-git
