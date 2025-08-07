@@ -6,7 +6,7 @@
 
 pkgname=kcm-grub2-git
 pkgver=0.6.4.r301.g1281187
-pkgrel=1
+pkgrel=2
 pkgdesc="A KDE Control Module for configuring the GRUB2 bootloader"
 arch=('x86_64')
 url='https://invent.kde.org/system/kcm-grub2'
@@ -21,13 +21,11 @@ makedepends=(
 	'cmake'
 	'extra-cmake-modules'
 	'git'
-	'packagekit-qt6'
 )
 conflicts=('grub2-editor-frameworks')
 provides=('grub2-editor-frameworks')
 optdepends=(
 	'os-prober: To detect other OSes when generating grub.cfg in BIOS systems'
-	'packagekit-qt6'
 )
 source=("${pkgname}::git+${url}.git")
 sha256sums=('SKIP')
@@ -45,10 +43,10 @@ build() {
 	cmake --build build
 }
 
-# No tests were found!!!
-# check() {
-# 	ctest --test-dir build
-# }
+# No tests were found!!
+check() {
+	ctest --test-dir build
+}
 
 package() {
 	DESTDIR="${pkgdir}" cmake --install build
